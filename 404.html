@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Brady Paterson – 404 Error Page. Looks like you've found a page that doesn't exist." />
+    <title>Page Not Found - Brady Paterson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .container-404 {
+            background: radial-gradient(circle, rgba(42,42,42,0.8) 0%, rgba(26,26,26,1) 70%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .astro-animation {
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+            transform-origin: center;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-25px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(92, 124, 250, 0.5); }
+            70% { box-shadow: 0 0 0 20px rgba(92, 124, 250, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(92, 124, 250, 0); }
+        }
+        
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        
+        .home-btn {
+            background: linear-gradient(45deg, #5c7cfa, #a663cc);
+            transition: all 0.3s ease;
+        }
+        
+        .home-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(166, 99, 204, 0.3);
+        }
+    </style>
+</head>
+<body class="h-screen flex flex-col">
+    <!-- Stars Background -->
+    <div id="stars-container" class="fixed inset-0 overflow-hidden z-0"></div>
+    
+    <!-- Navigation -->
+    <div class="fixed top-8 left-8 z-50 flex flex-col gap-4">
+        <div class="w-3 h-3 rounded-full bg-white"></div>
+        <div class="w-2 h-2 rounded-full bg-white opacity-30"></div>
+        <div class="w-2 h-2 rounded-full bg-white opacity-30"></div>
+        <div class="w-2 h-2 rounded-full bg-white opacity-30"></div>
+    </div>
+    
+    <!-- Header -->
+    <div class="fixed top-8 right-8 z-50 flex items-center gap-6">
+        <div class="logo text-sm font-light tracking-widest text-gray-300">designbrady</div>
+        <div class="w-9 h-9 rounded-full bg-white overflow-hidden">
+            <div class="w-full h-full bg-gradient-to-br from-purple-500 to-blue-500"></div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <main class="container-404 flex-grow flex flex-col items-center justify-center px-8 relative z-10">
+        <!-- Orbiting elements -->
+        <div class="orbit w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] animate-[rotate_20s_linear_infinite]"></div>
+        <div class="orbit w-[50vw] h-[50vw] max-w-[700px] max-h-[700px] animate-[rotate_40s_linear_infinite]"></div>
+        <div class="orbit w-[60vw] h-[60vw] max-w-[800px] max-h-[800px] animate-[rotate_60s_linear_infinite]"></div>
+        
+        <!-- Astronaut Illustration -->
+        <div class="astro-animation mb-12">
+            <svg width="300" height="300" viewBox="0 0 300 300" class="block mx-auto">
+                <text x="150" y="290" text-anchor="middle" fill="white" font-size="50" font-weight="bold">404</text>
+            </svg>
+        </div>
+        
+        <h1 class="text-6xl sm:text-8xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-500">
+            Lost in Space
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl text-center">
+            Looks like you've ventured into uncharted territory. The page you're searching for isn't in this orbit currently.
+        </p>
+        
+        <!-- Navigation buttons -->
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/" class="home-btn px-10 py-4 rounded-full text-white font-bold tracking-wider text-sm uppercase shadow-lg flex items-center gap-2">
+                <span>Return to Home Base</span>
+                <i class="fas fa-rocket"></i>
+            </a>
+            
+            <a href="instagram.com/designbrady" id="explore-btn" class="px-8 py-4 border border-white border-opacity-30 rounded-full text-white font-bold tracking-wider text-sm uppercase flex items-center gap-2 hover:bg-white hover:bg-opacity-10 transition-all">
+                <span>My Instagram</span>
+                <i class="fas fa-star"></i>
+            </a>
+        </div>
+        
+        <!-- Satellite/Planet -->
+        <div class="absolute bottom-8 right-8 pulse w-20 h-20 rounded-full bg-gradient-to-br from-pink-500 to-purple-600"></div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="py-6 border-t border-gray-800 flex items-center justify-center z-10 relative">
+        <p class="text-gray-400 text-sm">
+            Brady Paterson - Freelance Web & AI Developer
+        </p>
+    </footer>
+    
+    <script>
+        // Create stars background
+        const starsContainer = document.getElementById('stars-container');
+        const starsCount = 150;
+        
+        for (let i = 0; i < starsCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            // Random position
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            const size = Math.random() * 3;
+            const duration = (Math.random() * 5) + 2;
+            
+            star.style.left = `${left}%`;
+            star.style.top = `${top}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            
+            starsContainer.appendChild(star);
+        }
+        
+        // Explore button animation
+        const exploreBtn = document.getElementById('explore-btn');
+        
+        exploreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Animate button
+            exploreBtn.innerHTML = '<span>Exploring...</span> <i class="fas fa-compass animate-spin"></i>';
+            
+            // Show temporary notification
+            const notification = document.createElement('div');
+            notification.innerHTML = 'Here are some popular destinations to explore!';
+            notification.className = 'fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-6 py-3 rounded-full shadow-lg text-sm';
+            document.body.appendChild(notification);
+            
+            // Clear after 3 seconds
+            setTimeout(() => {
+                document.body.removeChild(notification);
+                exploreBtn.innerHTML = '<span>Explore Other Galaxies</span> <i class="fas fa-star"></i>';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

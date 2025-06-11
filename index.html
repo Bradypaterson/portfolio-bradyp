@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Brady Paterson - Web & AI Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Brady Paterson – Computer Science student, varsity athlete, and freelance web developer helping businesses grow through modern websites and AI automation." />
+    <meta name="keywords" content="Brady Paterson, web developer, AI automation, lead generation, SEO, branding design, Kitchener, Thorold, Ontario, Baden, Brady, Paterson, web design, freelance developer, computer science student, varsity athlete" />
+    <meta name="author" content="Brady Paterson">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'grotesk': ['Space Grotesk', 'sans-serif']
+                    },
+                    colors: {
+                        primary: '#2a2a2a',
+                        secondary: '#1a1a1a',
+                        accent: {
+                            DEFAULT: '#4a6741',
+                            500: '#442f1f',
+                            600: '#4a6741'
+                        },
+                        light: '#f8f8f8',
+                        highlight: '#e7c9a6'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            scroll-behavior: smooth;
+        }
+        
+        .screen {
+            min-height: 100vh;
+            width: 100%;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .slide-in {
+            animation: slideIn 0.6s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #e7c9a6 0%, #f8e5d3 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: #e7c9a6;
+        }
+    </style>
+</head>
+<body class="bg-primary font-grotesk text-light">
+    <!-- Navigation -->
+    <div class="fixed top-8 left-8 z-50 flex flex-row gap-4 md:flex-col">
+        <div class="nav-item w-3 h-3 rounded-full bg-accent-600 cursor-pointer transition-all duration-300 active" data-screen="1"></div>
+        <div class="nav-item w-3 h-3 rounded-full bg-accent-600 cursor-pointer transition-all duration-300" data-screen="2"></div>
+        <div class="nav-item w-3 h-3 rounded-full bg-accent-600 cursor-pointer transition-all duration-300" data-screen="3"></div>
+        <div class="nav-item w-3 h-3 rounded-full bg-accent-600 cursor-pointer transition-all duration-300" data-screen="4"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="fixed top-8 right-8 z-50 flex items-center gap-6">
+        <a href="My-Story.html"><div class="text-sm font-light tracking-widest">My Story</div></a>
+        <div class="w-9 h-9 rounded-full overflow-hidden cursor-pointer transition-transform hover:scale-110">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&q=80" alt="Profile" class="w-full h-full object-cover">
+        </div>
+    </div>
+
+    <!-- Screen 1 - Hero -->
+    <div class="screen flex flex-col justify-center items-center relative bg-cover bg-center p-8" 
+         style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hero.webp')"
+         id="screen-1">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-normal text-center tracking-[0.15em] mb-4 md:mb-6 slide-in" style="animation-delay: 0.1s">
+            BRADY <span class="gradient-text">PATERSON</span>
+        </h1>
+        <p class="text-xl md:text-3xl text-light/80 slide-in" style="animation-delay: 0.3s">Web & AI Agent Developer</p>
+        
+        <div class="w-screen absolute bottom-10 left-0 transform-translate-x-1/2 flex flex-col items-center slide-in" style="animation-delay: 0.7s">
+            <p class="text-sm mb-2">SCROLL TO EXPLORE</p>
+            <div class="w-0.5 h-10 bg-accent"></div>
+        </div>
+    </div>
+    
+    <!-- Screen 2 - Projects -->
+    <div class="screen bg-primary py-16 px-6 sm:px-10 relative" id="screen-2">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-12 ml-4">
+                <h1 class="text-4xl font-bold mb-3">My Work</h1>
+                <div class="w-16 h-0.5 bg-accent"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                <div class="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <!-- Project 1 -->
+                    <div class="glass-card rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1.5 slide-in" style="animation-delay: 0.1s">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('images/bsm.webp')"></div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Blue Star Media</h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-accent text-sm">Branding Design</span>
+                                <a href="http://bluestarmedia.ca/" class="text-sm font-medium py-2 px-4 rounded-md transition-all bg-accent hover:bg-accent-600">View Site</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="glass-card rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1.5 slide-in" style="animation-delay: 0.2s">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('images/prime.webp')"></div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Prime Brushstrokes</h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-accent text-sm">UI/UX Design</span>
+                                <a href="http://bluestarmedia.ca/Prime-Brushstroke/" class="text-sm font-medium py-2 px-4 rounded-md transition-all bg-accent hover:bg-accent-600">View Site</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="glass-card rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1.5 slide-in" style="animation-delay: 0.3s">
+                        <div class="h-48 bg-gray-800 flex items-center justify-center">
+                            <i class="far fa-folder text-5xl text-gray-500"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Coming Soon...</h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-accent text-sm">
+
+                                </span>
+                                <a href="#" class="text-sm font-medium py-2 px-4 rounded-md transition-all bg-gray-700 text-gray-400 cursor-not-allowed">Coming Soon</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="glass-card rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1.5 slide-in" style="animation-delay: 0.4s">
+                        <div class="h-48 bg-gray-800 flex items-center justify-center">
+                            <i class="far fa-folder text-5xl text-gray-500"></i>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-xl font-semibold mb-2">Coming Soon...</h3>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-accent text-sm">
+
+                                </span>
+                                <a href="#" class="text-sm font-medium py-2 px-4 rounded-md transition-all bg-gray-700 text-gray-400 cursor-not-allowed">Coming Soon</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 slide-in" style="animation-delay: 0.5s">
+                    <div class="glass-card rounded-xl p-8 h-full">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                            Featured <span class="text-accent">Projects</span>
+                        </h2>
+                        
+                        <div class="mb-6 flex items-center space-x-4">
+                            <div class="w-3 h-3 rounded-full bg-accent"></div>
+                            <h3 class="text-lg text-accent font-medium tracking-wider">BRANDING DESIGN</h3>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            Each project reflects my commitment to innovative design solutions, strategic branding, 
+                            and creative problem-solving across diverse industries. I blend aesthetics with functionality 
+                            to create memorable digital experiences.
+                        </p>
+                        
+                        <!-- <div class="flex flex-wrap gap-4">
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">AI Integration</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Lead Generation</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">Web Development</span>
+                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm">SEO Optimization</span>
+                        </div> -->
+                        
+                        <button class="mt-10 w-full py-4 rounded-lg bg-accent hover:bg-accent-600 transition-colors duration-300 flex items-center justify-center group">
+                            <span>VIEW SOCIALS</span>
+                            <i class="fas fa-arrow-right ml-3 transition-transform group-hover:translate-x-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Screen 3 - Why Choose Me -->
+    <div class="screen bg-secondary py-16 px-6 sm:px-10 relative" id="screen-3">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 text-center">
+                <h1 class="text-4xl font-bold mb-3">Why Choose Me?</h1>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Unique solutions designed to elevate your digital presence and drive measurable results
+                </p>
+            </div>
+            
+            <div class="space-y-10 max-w-5xl mx-auto">
+                <!-- Feature 1 -->
+                <div class="glass-card rounded-2xl overflow-hidden slide-in" style="animation-delay: 0.1s">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/2 relative">
+                            <div class="aspect-video bg-gray-800"><img src="images/lead.webp" alt="Lead Generation"></div>
+                            <div class="absolute top-4 left-4 px-4 py-1 bg-accent rounded-full text-sm">Lead Generation</div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-6 md:p-8">
+                            <h2 class="text-2xl font-bold mb-4">Hyper-Focused Lead Generation</h2>
+                            <p class="text-gray-400 mb-6">
+                                I build AI-powered systems designed specifically to bring real, qualified leads 
+                                straight to your business. No generic traffic, just prospects who want what you offer.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 group text-accent hover:text-accent-500">
+                                <span>Book a Free Call</span>
+                                <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="glass-card rounded-2xl overflow-hidden slide-in" style="animation-delay: 0.2s">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/2 order-2 md:order-1 p-6 md:p-8">
+                            <h2 class="text-2xl font-bold mb-4">Personalized AI Features Built-In</h2>
+                            <p class="text-gray-400 mb-6">
+                               Think of it as having a tireless employee working 24/7. Answering questions, qualifying leads, and handling repetitive tasks through custom chatbots, phone agents, and smart automations. Instant engagement, zero burnout.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 group text-accent hover:text-accent-500">
+                                <span>Explore AI Solutions</span>
+                                <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/2 order-1 md:order-2 relative">
+                            <div class="aspect-video bg-gray-800"><img src="images/ai.webp" alt="Lead Generation"></div>
+                            <div class="absolute top-4 right-4 px-4 py-1 bg-accent rounded-full text-sm">AI Automation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-2xl overflow-hidden slide-in" style="animation-delay: 0.3s">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/2 relative">
+                            <div class="aspect-video bg-gray-800"><img src="images/seo.webp" alt="Lead Generation" class="object-center object-cover"></div>
+                            <div class="absolute top-4 left-4 px-4 py-1 bg-accent rounded-full text-sm">SEO</div>
+                        </div>
+                        <div class="w-full md:w-1/2 p-6 md:p-8">
+                            <h2 class="text-2xl font-bold mb-4">SEO That Gets You Seen</h2>
+                            <p class="text-gray-400 mb-6">
+                                It's useless to have a website no one finds. I optimize your site so you climb the 
+                                ranks on Google and other search engines. Driving steady, organic traffic long-term.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 group text-accent hover:text-accent-500">
+                                <span>Audit My Site</span>
+                                <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Screen 4 - Contact -->
+    <div class="screen bg-primary flex items-center py-16 px-6 sm:px-10" id="screen-4">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="slide-in" style="animation-delay: 0.1s">
+                    <h2 class="text-4xl font-bold mb-10">Let's <span class="text-accent">Connect</span></h2>
+                    
+                    <ul class="space-y-5 mb-10">
+                        <li class="flex items-start gap-4">
+                            <div class="bg-accent w-8 h-8 rounded-md flex items-center justify-center">
+                                <i class="fas fa-envelope text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400 text-sm">EMAIL</h4>
+                                <a href="mailto:bradypaterson17@gmail.com" class="text-lg hover:text-accent transition-colors">bradypaterson17@gmail.com</a>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start gap-4">
+                            <div class="bg-accent w-8 h-8 rounded-md flex items-center justify-center">
+                                <i class="fas fa-phone text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400 text-sm">PHONE</h4>
+                                <a href="tel:+15194040264" class="text-lg hover:text-accent transition-colors">+1 519 404 0264</a>
+                            </div>
+                        </li>
+                        
+                        <li class="flex items-start gap-4">
+                            <div class="bg-accent w-8 h-8 rounded-md flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-gray-400 text-sm">LOCATIONS</h4>
+                                <p class="text-lg">Kitchener | Thorold - ON</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="flex gap-4 mt-10">
+                        <a href="https://www.linkedin.com/in/bradypaterson/" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Bradypaterson" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://instagram.com/designbrady" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-xl p-8 slide-in" style="animation-delay: 0.2s">
+                    <h3 class="text-2xl font-bold mb-6">Send me a message</h3>
+                    
+                    <form class="space-y-6 contact-form">
+                        <div>
+                            <input type="text" placeholder="Name" class="w-full bg-transparent border-b border-gray-700 py-3 px-0 outline-none focus:border-accent transition-colors">
+                        </div>
+                        
+                        <div>
+                            <input type="email" placeholder="Email" class="w-full bg-transparent border-b border-gray-700 py-3 px-0 outline-none focus:border-accent transition-colors">
+                        </div>
+                        
+                        <div>
+                            <input type="text" placeholder="Subject" class="w-full bg-transparent border-b border-gray-700 py-3 px-0 outline-none focus:border-accent transition-colors">
+                        </div>
+                        
+                        <div>
+                            <textarea placeholder="Message" rows="4" class="w-full bg-transparent border-b border-gray-700 py-3 px-0 outline-none focus:border-accent transition-colors resize-none"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-4 bg-accent hover:bg-accent-600 transition-colors font-medium rounded-lg flex items-center justify-center gap-3">
+                            <span>SEND MESSAGE</span>
+                            <i class="far fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="py-6 px-6 bg-secondary text-center text-gray-500 text-sm">
+        <p>© 2023 Brady Paterson. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        const navItems = document.querySelectorAll('.nav-item');
+        const screens = document.querySelectorAll('.screen');
+        const slideIns = document.querySelectorAll('.slide-in');
+
+        // Initialize Intersection Observer to handle animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideIn 0.6s forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all .slide-in elements
+        slideIns.forEach(slideIn => {
+            observer.observe(slideIn);
+        });
+
+        navItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                // Remove active class from all nav items
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // Add active class to clicked item
+                item.classList.add('active');
+                
+                // Scroll to corresponding screen
+                const targetScreen = document.getElementById(`screen-${index + 1}`);
+                targetScreen.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Update active nav item on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + window.innerHeight / 3;
+            
+            screens.forEach((screen, index) => {
+                const screenTop = screen.offsetTop;
+                const screenBottom = screenTop + screen.offsetHeight;
+                
+                if (scrollPosition >= screenTop && scrollPosition < screenBottom) {
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    navItems[index].classList.add('active');
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.querySelector('input[type="text"]').value;
+            
+            // Simple success notification
+            if (name) {
+                alert(`Thanks ${name}, your message has been sent!`);
+                document.querySelector('form').reset();
+            } else {
+                alert('Please fill in your name');
+            }
+        });
+    </script>
+</body>
+</html>
