@@ -1,483 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Brady Paterson - My Story</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Discover the journey of Brady Paterson, from a young athlete to a self-taught developer. Explore his story of growth, resilience, and passion for coding.">
-    <meta name="keywords" content="Brady Paterson, athlete, developer, story, journey, coding, volleyball, self-taught, resilience">
-    <meta name="author" content="Brady Paterson">
+    <meta
+      name="description"
+      content="Discover the journey of Brady Paterson, from a young athlete to a self-taught developer. Explore his story of growth, resilience, and passion for coding."
+    />
+    <meta
+      name="keywords"
+      content="Brady Paterson, athlete, developer, story, journey, coding, volleyball, self-taught, resilience"
+    />
+    <meta name="author" content="Brady Paterson" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="images/me.webp" type="image/webp">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="images/me.webp" type="image/webp" />
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'grotesk': ['Space Grotesk', 'sans-serif']
-                    },
-                    colors: {
-                        primary: '#2a2a2a',
-                        secondary: '#1a1a1a',
-                        accent: {
-                            DEFAULT: '#4a6741',
-                            500: '#442f1f',
-                            600: '#4a6741'
-                        },
-                        light: '#f8f8f8',
-                        highlight: '#e7c9a6'
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              grotesk: ["Space Grotesk", "sans-serif"],
+            },
+            colors: {
+              primary: "#2a2a2a",
+              secondary: "#1a1a1a",
+              accent: {
+                DEFAULT: "#4a6741",
+                500: "#442f1f",
+                600: "#4a6741",
+              },
+              light: "#f8f8f8",
+              highlight: "#e7c9a6",
+            },
+          },
+        },
+      };
     </script>
     <style>
-        html, body {
-            scroll-behavior: smooth;
-            height: 100%;
+      @import "tailwindcss";
+      html,
+      body {
+        scroll-behavior: smooth;
+        height: 100%;
+      }
+
+      .screen {
+        min-height: 100vh;
+        width: 100%;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .glass-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .slide-in {
+        animation: slideIn 0.6s forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        
-        .screen {
-            min-height: 100vh;
-            width: 100%;
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .slide-in {
-            animation: slideIn 0.6s forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #e7c9a6 0%, #f8e5d3 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: -1.8rem;
-            top: 1.25rem;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            background-color: #4a6741;
-            z-index: 10;
-        }
-        
+      }
+
+      .gradient-text {
+        background: linear-gradient(135deg, #e7c9a6 0%, #f8e5d3 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: -1.2rem;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background: #4a6741;
+      }
+
+      .quote-marks {
+        font-size: 12rem;
+        line-height: 1;
+        position: absolute;
+        top: -4rem;
+        left: -2rem;
+        color: rgba(231, 201, 166, 0.07);
+        z-index: -1;
+      }
+
+      .value-icon {
+        transition: all 0.4s ease;
+      }
+
+      .value-card:hover .value-icon {
+        transform: translateY(-0.5rem) scale(1.1);
+      }
+
+      @media (max-width: 1024px) {
+        .timeline-dot,
         .timeline-line {
-            position: absolute;
-            left: -1.2rem;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: #4a6741;
+          left: 0.5rem;
         }
-        
-        .quote-marks {
-            font-size: 12rem;
-            line-height: 1;
-            position: absolute;
-            top: -4rem;
-            left: -2rem;
-            color: rgba(231, 201, 166, 0.07);
-            z-index: -1;
-        }
-        
-        .value-icon {
-            transition: all 0.4s ease;
-        }
-        
-        .value-card:hover .value-icon {
-            transform: translateY(-0.5rem) scale(1.1);
-        }
-        
-        @media (max-width: 1024px) {
-            .timeline-dot, .timeline-line {
-                left: 0.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body class="bg-primary font-grotesk text-light relative">
+  </head>
+  <body class="bg-primary font-grotesk text-light relative">
     <!-- Navigation -->
-    <nav class="fixed top-0 inset-x-0 z-50 bg-primary/90 backdrop-blur-sm py-4 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-medium flex items-center gap-2 group">
-                <div class="w-3 h-3 rounded-full bg-accent-600 mr-2"></div>
-                My Story
-            </a>
-            
-            <div class="flex items-center space-x-6">
-                <a href="index.html" class="text-sm font-light tracking-widest hover:text-accent-600 transition-colors">HOME</a>
-                <div class="w-9 h-9 rounded-full overflow-hidden cursor-pointer transition-transform hover:scale-110">
-                    <img src="images/me.webp" alt="Profile" class="w-full h-full object-cover" width="300" height="300">
-                </div>
-            </div>
+    <nav
+      class="fixed top-0 inset-x-0 z-50 bg-primary/90 backdrop-blur-sm py-4 px-6 md:px-12"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a
+          href="index.html"
+          class="text-xl font-medium flex items-center gap-2 group"
+        >
+          <div class="w-3 h-3 rounded-full bg-accent-600 mr-2"></div>
+          My Story
+        </a>
+
+        <div class="flex items-center space-x-6">
+          <a
+            href="../"
+            class="text-sm font-light tracking-widest hover:text-accent-600 transition-colors"
+            >HOME</a
+          >
+          <div
+            class="w-9 h-9 rounded-full overflow-hidden cursor-pointer transition-transform hover:scale-110"
+          >
+            <img
+              src="images/me.webp"
+              alt="Profile"
+              class="w-full h-full object-cover"
+              width="300"
+              height="300"
+            />
+          </div>
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="screen flex flex-col justify-center items-center relative bg-cover bg-center p-8"
-         id="screen-1">
-        <h1 class="text-5xl md:text-7xl lg:text-8xl font-normal text-center tracking-[0.15em] mb-4 md:mb-6 slide-in" style="animation-delay: 0.1s">
-            Who is Brady <br><span class="gradient-text">PATERSON</span>
-        </h1>
-        <p class="text-xl md:text-3xl text-light/80 slide-in" style="animation-delay: 0.3s">This Is My Story</p>
-        
-        <div class="w-screen absolute bottom-10 left-0 transform-translate-x-1/2 flex flex-col items-center slide-in" style="animation-delay: 0.7s">
-            <p class="text-sm mb-2">SCROLL TO READ</p>
-            <div class="w-0.5 h-10 bg-accent"></div>
-        </div>
+    <div
+      class="screen flex flex-col justify-center items-center relative bg-cover bg-center p-8"
+      id="screen-1"
+    >
+      <h1
+        class="text-5xl md:text-7xl lg:text-8xl font-normal text-center tracking-[0.15em] mb-4 md:mb-6 slide-in"
+        style="animation-delay: 0.1s"
+      >
+        Who is Brady <br /><span class="gradient-text">PATERSON</span>
+      </h1>
+      <p
+        class="text-xl md:text-3xl text-light/80 slide-in"
+        style="animation-delay: 0.3s"
+      >
+        This Is My Story
+      </p>
+
+      <div
+        class="w-screen absolute bottom-10 left-0 transform-translate-x-1/2 flex flex-col items-center slide-in"
+        style="animation-delay: 0.7s"
+      >
+        <p class="text-sm mb-2">SCROLL TO READ</p>
+        <div class="w-0.5 h-10 bg-accent"></div>
+      </div>
     </div>
 
     <!-- About Me Section -->
     <section class="screen bg-secondary py-16" id="screen-2">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center slide-in">About Me</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="glass-card p-6 slide-in" style="animation-delay: 0.2s">
-                    <div class="aspect-square bg-gray-800 rounded-xl overflow-hidden">
-                        <img src="images/me.webp"Brady Paterson" class="w-full h-full object-cover">
-                    </div>
-                </div>
-                
-                <div class="slide-in" style="animation-delay: 0.3s">
-                    <div class="relative">
-                        <span class="quote-marks">"</span>
-                        <h3 class="text-2xl font-bold mb-4">From Thriving to Transformation</h3>
-                        <p class="text-gray-300 mb-4 leading-relaxed">
-                            In a world full of beautiful places, colours, and people, I see things in black and white. Living with Asperger's, things are either right or wrong. No middle ground. I don't connect with small talk or sugar-coated answers. I care about what's real.
-                        </p>
-                        <p class="text-gray-300 mb-4 leading-relaxed">
-                            Growing up in a small town in Ontario, I didnt have many friends. I found strength in sports and volleyball became my outlet. Representing Team Ontario and Team Canada taught me discipline and determination. But behind the medals was a kid battling self-doubt and mental health struggles.
-                        </p>
-                        <p class="text-gray-300 mb-4 leading-relaxed">
-                            Music helped me through a ton during those difficult times, it was my way of releasing what I needed. When words weren't enough, melodies, rhythms and good music became the language for emotions I couldn't otherwise express.
-                        </p>
-                        <p class="text-gray-300 mb-6 leading-relaxed">
-                            At my lowest point, I turned to cannabis to numb the pain. Human to human, don’t turn to drugs looking for answers. They don’t just hurt you, they hurt the people who care for you. My hardest moment through it all was realizing how deeply I hurt my parents. And yet, no matter what, they still love their son. I can never repay them for that, I can only try to be the best version of myself every day.
-                        </p>
-                        <p class="text-gray-300 mb-6 leading-relaxed">
-                            What I’ve come to understand is that real peace doesn’t come from running. It doesn’t come from avoiding the problem, it comes from facing it. It comes from being brutally honest with yourself, pushing through the discomfort, and doing the work to grow. All of this lead me here, truthfully grateful it happened, it gave me an opportunity to learn and grow as a person, and closer with my loved one. 
-                        </p>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-0.5 bg-accent"></div>
-                            <span class="text-accent text-base">Brady</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center slide-in">About Me</h2>
 
-     <!-- My Advice Section -->
-    <section class="bg-secondary pb-16" id="screen-5">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-4 text-center slide-in">My Advice</h2>
-            
-            <div class="glass-card p-8 md:p-10 text-gray-300 leading-relaxed">
-                <p class="mb-6">There's no shortcut, the only way out is through. Growth hurts and change is uncomfortable. But that's where strength comes from. That's how self-respect is built.</p>
- 
-                <p class="mb-6">I had to stop chasing an escape and start building a life I didn't need to run from. I've learned that the grass isn't greener on the other side, it's greener where you water it. That means showing up every single day, even when it feels hard. Especially when it's hard. Because those moments, the ones you want to run from, that's where growth sprouts from. A seed must be buried in dirt but from that, the most beautiful flowers are grown.</p>
-                
-                <p class="mb-6">One of my favourite quotes says, "What doesn't kill you makes you stronger." Most people know it from Kelly Clarkson, but the words go back to 1888, written by German philosopher Friedrich Nietzsche. It's more than a quote to me, it's the truth.</p>
-                
-                <p class="mb-6">Life will test you. It will break you down. But if you keep showing up, keep pushing through and don't aim to be invincible but rather unstoppable. You will become unstoppable.</p>
-                
-                <p class="mb-6">I stopped seeing life as a series of problems and started seeing it as a series of challenges with solutions. That shift changed everything. Once you realize you have control over how you respond, you stop waiting for better circumstances and start building better ones. No more waiting for the grass to be greener, start watering it.</p>
-                
-                <p>From the outside, it might have looked like I had it all. A top-level athlete playing for Team Ontario and Team Canada. A driven student, a guy with big goals. But behind the medals and jerseys was a kid battling self doubt every day. People said I was winning, but they didn't see the nights I went home and looked in the mirror, thinking I wasn't enough. Here's the truth: it doesn't matter how many people tell you you're doing great. If you don't believe it yourself, it doesn't mean anything. Why do I tell you all this, so you know what I recently learned. You that no matter how successful, poor, happy or sad. We all experience triumphs and often never know who silently struggles too. Be kind, enjoy the ones around you and it’s okay to be vulnerable, this is my way of doing so.</p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="glass-card p-6 slide-in" style="animation-delay: 0.2s">
+            <div class="aspect-square bg-gray-800 rounded-xl overflow-hidden">
+              <img src="images/me.webp"Brady Paterson" class="w-full h-full
+              object-cover">
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Timeline Section -->
-    <section class="screen bg-primary py-16" id="screen-3">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center slide-in">From the Court to Code</h2>
-            
-            <div class="relative pl-4 md:pl-0">
-                <!-- Timeline line -->
-                <div class="timeline-line"></div>
-                
-                <!-- Timeline item 1 -->
-                <div class="slide-in mb-16 relative pl-10 md:pl-20" style="animation-delay: 0.1s">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold">First Contact with Volleyball</h3>
-                            <span class="text-accent text-sm font-medium">2013 - Age 8</span>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                            Represented Ontario and Canada in volleyball. Traveled internationally competing in tournaments across North America. Learned discipline, teamwork and what it means to compete under pressure.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-xs">Team Canada</span>
-                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-xs">Competition</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline item 2 -->
-                <div class="slide-in mb-16 relative pl-10 md:pl-20" style="animation-delay: 0.2s">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold">Team Ontario -> Canada Summer Games</h3>
-                            <span class="text-accent text-sm font-medium">2020 - Age 15</span>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                           After years of commitment, I earned a spot on Team Ontario for the first time. It was validation that the grind was worth it. That summer changed everything, I realized what it meant to compete at the next level. Eventually leading to the Canada Summer Games.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Timeline item 3 -->
-                <div class="slide-in mb-16 relative pl-10 md:pl-20" style="animation-delay: 0.3s">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold">First Time Coding</h3>
-                            <span class="text-accent text-sm font-medium">2020 - Age 17</span>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                            With the chaos of COVID-19, I found myself with time to explore new interests. I started learning to code, initally with java becuase thats what my school taught. But it quickly became more than that, it was a new challenge, a new way to solve problems.
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- Timeline item 4 -->
-                <div class="slide-in mb-16 relative pl-10 md:pl-20" style="animation-delay: 0.4s">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold">High School – NEP & Team Canada</h3>
-                            <span class="text-accent text-sm font-medium">2022 - Age 17</span>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                           Before I even graduated high school, I was selected for the National Excellence Program (NEP) and had the honor of representing Canada. Wearing the maple leaf wasn’t just about the jersey. It was about discipline, sacrifice, and the responsibility of holding yourself to a higher standard.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-xs">Self-Taught</span>
-                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-xs">Web Development</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Timeline item 5 -->
-                <div class="slide-in relative mb-16 pl-10 md:pl-20" style="animation-delay: 0.5s">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold">Year 1 University – McMaster University</h3>
-                            <span class="text-accent text-sm font-medium">Now</span>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                            I started my university career at McMaster, earning athletic accolades and gaining national recognition, but
-                            something
-                            was missing. On paper, it looked perfect. But inside, I wasn’t fulfilled. I didn’t feel like myself. I was
-                            succeeding,
-                            but not aligned.
-                        </p>
-                        <div class="mt-4 flex items-center">
-                            <div class="mr-2 text-accent">
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-                            <span class="text-sm">
-                                 <span class="text-accent">Romans 8:18</span> - The pain of today is nothing compared to the glory that will be revealed in us.
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Timeline item 6 -->
-                <div class="slide-in relative pl-10 md:pl-20" style="animation-delay: 0.5s">
-                    <div class="timeline-dot"></div>
-                    <div class="glass-card p-8">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-xl font-bold">Year 3 University – Brock University</h3>
-                            <span class="text-accent text-sm font-medium">Now</span>
-                        </div>
-                        <p class="text-gray-300 mb-4">
-                            Finally, I found a place that felt like home. Brock University welcomed me with open arms, and I felt like I could truly be myself. Here, im not just a student or an athlete, im a creator, a builder, and human. This is where I can combine my love for coding, volleyball and enjoying life.
-                        </p>
-                    </div>
-                </div>
+          <div class="slide-in" style="animation-delay: 0.3s">
+            <div class="relative">
+              <span class="quote-marks">"</span>
+              <h3 class="text-2xl font-bold mb-4">
+                From Thriving to Transformation
+              </h3>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                In a world full of beautiful places, colours, and people, I see
+                things in black and white. Living with Asperger's, things are
+                either right or wrong. No middle ground. I don't connect with
+                small talk or sugar-coated answers. I care about what's real.
+              </p>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Growing up in a small town in Ontario, I didnt have many
+                friends. I found strength in sports and volleyball became my
+                outlet. Representing Team Ontario and Team Canada taught me
+                discipline and determination. But behind the medals was a kid
+                battling self-doubt and mental health struggles.
+              </p>
+              <p class="text-gray-300 mb-4 leading-relaxed">
+                Music helped me through a ton during those difficult times, it
+                was my way of releasing what I needed. When words weren't
+                enough, melodies, rhythms and good music became the language for
+                emotions I couldn't otherwise express.
+              </p>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                At my lowest point, I turned to cannabis to numb the pain. Human
+                to human, don’t turn to drugs looking for answers. They don’t
+                just hurt you, they hurt the people who care for you. My hardest
+                moment through it all was realizing how deeply I hurt my
+                parents. And yet, no matter what, they still love their son. I
+                can never repay them for that, I can only try to be the best
+                version of myself every day.
+              </p>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                What I’ve come to understand is that real peace doesn’t come
+                from running. It doesn’t come from avoiding the problem, it
+                comes from facing it. It comes from being brutally honest with
+                yourself, pushing through the discomfort, and doing the work to
+                grow. All of this lead me here, truthfully grateful it happened,
+                it gave me an opportunity to learn and grow as a person, and
+                closer with my loved one.
+              </p>
+              <div class="flex items-center space-x-3">
+                <div class="w-8 h-0.5 bg-accent"></div>
+                <span class="text-accent text-base">Brady</span>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Core Values Section -->
-    <section class="screen bg-secondary py-16" id="screen-4">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-4 text-center slide-in">What I Believe</h2>
-            <p class="text-gray-400 max-w-2xl mx-auto text-center mb-16 slide-in">Principles that guide my journey</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Value 1 -->
-                <div class="value-card slide-in glass-card p-8" style="animation-delay: 0.1s">
-                    <div class="flex flex-col h-full">
-                        <div class="value-icon mb-6 text-accent text-4xl">
-                            <i class="fas fa-seedling"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Growth Through Adversity</h3>
-                        <p class="text-gray-300 mb-6 flex-grow">
-                            Without the low points, the highs wouldn't mean a thing. I've learned that the most painful experiences often contain the most valuable lessons and opportunities for growth.
-                        </p>
-                        <div class="border-t border-gray-700 pt-4 text-accent">
-                            "What doesn't kill you makes you stronger"
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Value 2 -->
-                <div class="value-card slide-in glass-card p-8" style="animation-delay: 0.2s">
-                    <div class="flex flex-col h-full">
-                        <div class="value-icon mb-6 text-accent text-4xl">
-                            <i class="fas fa-mask"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Authenticity</h3>
-                        <p class="text-gray-300 mb-6 flex-grow">
-                            No fronts, no false narratives. My story isn't perfect, but it's real. I believe in being honest about struggles and mistakes because perfection isn't the goal, progress is.
-                        </p>
-                        <div class="border-t border-gray-700 pt-4 text-accent">
-                            "Owning my mistakes without excuses"
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Value 3 -->
-                <div class="value-card slide-in glass-card p-8" style="animation-delay: 0.3s">
-                    <div class="flex flex-col h-full">
-                        <div class="value-icon mb-6 text-accent text-4xl">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Curiosity</h3>
-                        <p class="text-gray-300 mb-6 flex-grow">
-                            I see the world in black and white and care about what works. This drives me to constantly explore and understand systems, from coding to business processes.
-                        </p>
-                        <div class="border-t border-gray-700 pt-4 text-accent">
-                            "Continuously learning concepts that matter"
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Value 4 -->
-                <div class="value-card slide-in glass-card p-8" style="animation-delay: 0.4s">
-                    <div class="flex flex-col h-full">
-                        <div class="value-icon mb-6 text-accent text-4xl">
-                            <i class="fas fa-dumbbell"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Discipline & Commitment</h3>
-                        <p class="text-gray-300 mb-6 flex-grow">
-                            The grass is greener where you water it. I believe in showing up every day, especially when it's difficult. That's where real growth happens.
-                        </p>
-                        <div class="border-t border-gray-700 pt-4 text-accent">
-                            "1% better every single day"
-                        </div>
-                    </div>
-                </div>
+    <section class="screen bg-primary py-16" id="screen-4">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-center slide-in">
+          What I Believe
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto text-center mb-16 slide-in">
+          Principles that guide my journey
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Value 1 -->
+          <div
+            class="value-card slide-in glass-card p-8 bg-secondary"
+            style="animation-delay: 0.1s"
+          >
+            <div class="flex flex-col h-full">
+              <div class="value-icon mb-6 text-accent text-4xl">
+                <i class="fas fa-seedling"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Growth Through Adversity</h3>
+              <p class="text-gray-300 mb-6 flex-grow">
+                Without the low points, the highs wouldn't mean a thing. I've
+                learned that the most painful experiences often contain the most
+                valuable lessons and opportunities for growth.
+              </p>
+              <div class="border-t border-gray-700 pt-4 text-accent">
+                "What doesn't kill you makes you stronger"
+              </div>
             </div>
+          </div>
+
+          <!-- Value 2 -->
+          <div
+            class="value-card slide-in glass-card p-8 bg-secondary"
+            style="animation-delay: 0.2s"
+          >
+            <div class="flex flex-col h-full">
+              <div class="value-icon mb-6 text-accent text-4xl">
+                <i class="fas fa-mask"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Authenticity</h3>
+              <p class="text-gray-300 mb-6 flex-grow">
+                No fronts, no false narratives. My story isn't perfect, but it's
+                real. I believe in being honest about struggles and mistakes
+                because perfection isn't the goal, progress is.
+              </p>
+              <div class="border-t border-gray-700 pt-4 text-accent">
+                "Owning my mistakes without excuses"
+              </div>
+            </div>
+          </div>
+
+          <!-- Value 3 -->
+          <div
+            class="value-card slide-in glass-card p-8 bg-secondary"
+            style="animation-delay: 0.3s"
+          >
+            <div class="flex flex-col h-full">
+              <div class="value-icon mb-6 text-accent text-4xl">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Curiosity</h3>
+              <p class="text-gray-300 mb-6 flex-grow">
+                I see the world in black and white and care about what works.
+                This drives me to constantly explore and understand systems,
+                from coding to business processes.
+              </p>
+              <div class="border-t border-gray-700 pt-4 text-accent">
+                "Continuously learning concepts that matter"
+              </div>
+            </div>
+          </div>
+
+          <!-- Value 4 -->
+          <div
+            class="value-card slide-in glass-card p-8 bg-secondary"
+            style="animation-delay: 0.4s"
+          >
+            <div class="flex flex-col h-full">
+              <div class="value-icon mb-6 text-accent text-4xl">
+                <i class="fas fa-dumbbell"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">Discipline & Commitment</h3>
+              <p class="text-gray-300 mb-6 flex-grow">
+                The grass is greener where you water it. I believe in showing up
+                every day, especially when it's difficult. That's where real
+                growth happens.
+              </p>
+              <div class="border-t border-gray-700 pt-4 text-accent">
+                "1% better every single day"
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- My Advice Section -->
+    <section class="bg-secondary py-16" id="screen-5">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-center slide-in">My Advice</h2>
+
+        <div class="glass-card p-8 md:p-10 text-gray-300 leading-relaxed">
+          <p class="mb-6">
+            There's no shortcut, the only way out is through. Growth hurts and
+            change is uncomfortable. But that's where strength comes from.
+            That's how self-respect is built.
+          </p>
+
+          <p class="mb-6">
+            I had to stop chasing an escape and start building a life I didn't
+            need to run from. I've learned that the grass isn't greener on the
+            other side, it's greener where you water it. That means showing up
+            every single day, even when it feels hard. Especially when it's
+            hard. Because those moments, the ones you want to run from, that's
+            where growth sprouts from. A seed must be buried in dirt but from
+            that, the most beautiful flowers are grown.
+          </p>
+
+          <p class="mb-6">
+            One of my favourite quotes says, "What doesn't kill you makes you
+            stronger." Most people know it from Kelly Clarkson, but the words go
+            back to 1888, written by German philosopher Friedrich Nietzsche.
+            It's more than a quote to me, it's the truth.
+          </p>
+
+          <p class="mb-6">
+            Life will test you. It will break you down. But if you keep showing
+            up, keep pushing through and don't aim to be invincible but rather
+            unstoppable. You will become unstoppable.
+          </p>
+
+          <p class="mb-6">
+            I stopped seeing life as a series of problems and started seeing it
+            as a series of challenges with solutions. That shift changed
+            everything. Once you realize you have control over how you respond,
+            you stop waiting for better circumstances and start building better
+            ones. No more waiting for the grass to be greener, start watering
+            it.
+          </p>
+
+          <p class="mb-6">
+            From the outside, it might have looked like I had it all. A
+            top-level athlete playing for Team Ontario and Team Canada. A driven
+            student, a guy with big goals. But behind the medals and jerseys was
+            a kid battling self doubt every day. People said I was winning, but
+            they didn't see the nights I went home and looked in the mirror,
+            thinking I wasn't enough. Here's the truth: it doesn't matter how
+            many people tell you you're doing great. If you don't believe it
+            yourself, it doesn't mean anything.
+          </p>
+
+          <p>
+            Why do I tell you all this, to show were all human, we make
+            mistakes. That no matter how successful, poor, happy or sad. We all
+            experience triumphs and often never know who silently struggles too.
+            Be kind, enjoy the ones around you and it’s okay to be vulnerable,
+            this is my way of doing so.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="w-full bg-primary py-16" id="screen-3">
+      <div class="max-w-4xl mx-auto px-6">
+        <h1 class="text-3xl font-bold mb-12 text-center slide-in">
+          Why Do I Share this?
+        </h1>
+
+        <div class="relative pl-4 md:pl-0">
+          <!-- line -->
+          <div class="timeline-line"></div>
+          <div
+            class="slide-in mb-16 relative pl-10 md:pl-20"
+            style="animation-delay: 0.1s">
+            <div class="glass-card p-8 bg-secondary">
+              <p>
+                I’m not here to sell a fantasy. I’m here to show you who I
+                really am, because the truth matters more than a perfected
+                pitch.
+              </p>
+              <br />
+              <p>
+                I don’t share this for pity. I share it because it’s real. And I
+                connect with real.
+              </p>
+              <br />
+              <p>
+                In a world of AI generated chatter, fake gurus, and pixel
+                perfect posts, honesty stands out. And I’d rather be chosen for
+                who I am, not just what I can do.
+              </p>
+              <br />
+              <p>If you decide to work with me know this..</p>
+              <br />
+              <ul style="list-style-type: disc">
+                <li class="ml-8">
+                  I bring more than skills,I bring lived experience, discipline,
+                  and intention.
+                </li>
+                <li class="ml-8">
+                  I treat your business like I treat my own, no fluff, just
+                  execution.
+                </li>
+                <li class="ml-8">
+                  I only build things I believe in, tools, sites, systems that
+                  move forward.
+                </li>
+              </ul>
+              <br />
+              <p>
+                This isn’t just a business to me. It’s a way to create freedom,
+                for myself, and for you.<br /><br />If that resonates with you,
+                let’s build something real.
+              </p>
+              <!-- <a href=""><div class="btn">Contact Me</div></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Vision Section -->
-    <section class="screen bg-primary py-16 flex items-center" id="screen-5">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <div class="slide-in mb-4" style="animation-delay: 0.1s">
-                <span class="text-accent font-bold">MY MISSION</span>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 slide-in" style="animation-delay: 0.2s">
-                The Road Ahead
-            </h2>
-            
-            <div class="glass-card p-8 md:p-12 text-left mb-12 slide-in" style="animation-delay: 0.3s">
-                <p class="text-xl md:text-2xl text-gray-300 mb-6">
-                    "I build systems that give people their lives back. My mission is to eliminate wasted time, replace chaos with clarity, and help others focus on what matters most."
-                </p>
-                <p class="text-xl md:text-2xl text-gray-300">
-                    "Through truth, grit, and continuous growth, I create tools that don't just run businesses: They free people to live fully."
-                </p>
-            </div>
-            
-            <div class="slide-in" style="animation-delay: 0.4s">
-                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    Playing high-level sports meant I missed out on a lot. That's why I build the systems I do, to give business owners space to breathe and enjoy their lives.
-                </p>
-                
-                <a href="#" class="inline-block bg-accent hover:bg-accent-600 transition-colors duration-300 py-3 px-8 rounded-lg font-medium text-lg">
-                    Build Something Together
-                    <i class="ml-2 fas fa-arrow-right"></i>
-                </a>
-                
-                <div class="mt-20 text-sm text-gray-500">
-                    <div class="flex justify-center items-center">
-                        <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
-                        <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
-                        <div class="mx-1 w-3 h-3 border border-gray-600 rounded-full"></div>
-                        <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
-                        <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
-                    </div>
-                    <div class="mt-4">
-                        PEACE AND LOVE - BP<span class="text-accent">&#10084;</span>
-                    </div>
-                </div>
-            </div>
+    <section class="screen bg-secondary py-16 flex items-center" id="screen-5">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="slide-in mb-4" style="animation-delay: 0.1s">
+          <span class="text-accent font-bold">MY MISSION</span>
         </div>
+        <h2
+          class="text-3xl md:text-4xl font-bold mb-8 slide-in"
+          style="animation-delay: 0.2s"
+        >
+          The Road Ahead
+        </h2>
+
+        <div
+          class="glass-card p-8 md:p-12 text-left mb-12 slide-in"
+          style="animation-delay: 0.3s"
+        >
+          <p class="text-xl md:text-2xl text-gray-300 mb-6">
+            "I build systems that give people their lives back. My mission is to
+            eliminate wasted time, replace chaos with clarity, and help others
+            focus on what matters most."
+          </p>
+          <p class="text-xl md:text-2xl text-gray-300">
+            "Through truth, grit, and continuous growth, I create tools that
+            don't just run businesses: They free people to live fully."
+          </p>
+        </div>
+
+        <div class="slide-in" style="animation-delay: 0.4s">
+          <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+            Playing high-level sports meant I missed out on a lot. That's why I
+            build the systems I do, to give business owners space to breathe and
+            enjoy their lives.
+          </p>
+
+          <a
+            href="#"
+            class="inline-block bg-accent hover:bg-accent-600 transition-colors duration-300 py-3 px-8 rounded-lg font-medium text-lg"
+          >
+            Build Something Together
+            <i class="ml-2 fas fa-arrow-right"></i>
+          </a>
+
+          <div class="mt-20 text-sm text-gray-500">
+            <div class="flex justify-center items-center">
+              <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
+              <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
+              <div
+                class="mx-1 w-3 h-3 border border-gray-600 rounded-full"
+              ></div>
+              <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
+              <div class="mx-1 w-1 h-1 bg-gray-600 rounded-full"></div>
+            </div>
+            <div class="mt-4">
+              PEACE AND LOVE - BP<span class="text-accent">&#10084;</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <script>
-        // Initialize Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1
-        };
+      // Initialize Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+      };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideIn 0.6s forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all .slide-in elements
-        const slideIns = document.querySelectorAll('.slide-in');
-        slideIns.forEach(slideIn => {
-            observer.observe(slideIn);
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "slideIn 0.6s forwards";
+            observer.unobserve(entry.target);
+          }
         });
+      }, observerOptions);
 
-        // Simple fade-in on load for hero section
-        window.addEventListener('load', function() {
-            document.querySelector('#screen-1').classList.add('slide-in');
-        });
+      // Observe all .slide-in elements
+      const slideIns = document.querySelectorAll(".slide-in");
+      slideIns.forEach((slideIn) => {
+        observer.observe(slideIn);
+      });
+
+      // Simple fade-in on load for hero section
+      window.addEventListener("load", function () {
+        document.querySelector("#screen-1").classList.add("slide-in");
+      });
     </script>
-</body>
+  </body>
 </html>
